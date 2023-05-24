@@ -18,6 +18,7 @@ const NavBar = ({ setIsSideBarOpen }) => {
       <Toolbar>
         <FlexBetween width="100%">
           <IconButton
+            onClick={() => setIsSideBarOpen((prev) => !prev)}
             size="large"
             edge="start"
             color="inherit"
@@ -25,7 +26,7 @@ const NavBar = ({ setIsSideBarOpen }) => {
             sx={{ mr: 2 }}
           >
             {" "}
-            <Menu onClick={() => setIsSideBarOpen((prev) => !prev)} />
+            <Menu />
           </IconButton>
           <Button onClick={() => dispatch(setLogout())} color="inherit">
             Logout
