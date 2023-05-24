@@ -11,7 +11,7 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import { Email, Visibility, VisibilityOff } from "@mui/icons-material";
+import { Person, Visibility, VisibilityOff } from "@mui/icons-material";
 
 import Header from "components/Header/Header";
 import CenterBox from "components/CustomBoxs/CenterBox";
@@ -55,7 +55,7 @@ const Login = () => {
         bgcolor="antiquewhite"
         borderRadius="10px"
       >
-        <Header title="LOGIN" subtitle="Login to access the dashboard" />
+        <Header title="LOGIN" subtitle="Entre para acessar o dashboard" />
         <FlexBetween
           flexDirection="column"
           mt="2rem"
@@ -67,16 +67,18 @@ const Login = () => {
             variant="standard"
             sx={{ width: "100%" }}
           >
-            <InputLabel htmlFor="standard-adornment-password">Email</InputLabel>
+            <InputLabel htmlFor="standard-adornment-password">
+              Usuário
+            </InputLabel>
             <Input
-              id="standard-adornment-email"
+              id="standard-adornment-Person"
               type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value.trim())}
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton aria-label="toggle email">
-                    <Email style={{ color: isError ? "red" : "#051428" }} />
+                  <IconButton aria-label="toggle Person">
+                    <Person style={{ color: isError ? "red" : "#051428" }} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -87,9 +89,7 @@ const Login = () => {
             variant="standard"
             sx={{ width: "100%" }}
           >
-            <InputLabel htmlFor="standard-adornment-password">
-              Password
-            </InputLabel>
+            <InputLabel htmlFor="standard-adornment-password">Senha</InputLabel>
             <Input
               id="standard-adornment-password"
               type={showPassword ? "text" : "password"}
@@ -137,7 +137,7 @@ const Login = () => {
           </Button>
           <Box>
             <Typography fontSize="0.75rem">
-              Usuario: admin / Password: admin
+              Usuario: admin / Senha: admin
             </Typography>
           </Box>
         </FlexBetween>
