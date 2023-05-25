@@ -77,9 +77,7 @@ const Login = () => {
               onChange={(e) => setUsuario(e.target.value.trim())}
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton aria-label="toggle Person">
-                    <Person style={{ color: isError ? "red" : "#051428" }} />
-                  </IconButton>
+                  <Person style={{ color: isError ? "red" : "#051428", marginRight:"9px" }} />
                 </InputAdornment>
               }
             />
