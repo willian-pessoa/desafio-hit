@@ -22,6 +22,7 @@ function App() {
             <Route path="/" element={<Navigate to={isLoged ? "/dashboard" : "/login"} replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/tickets" element={<Tickets />} />
+            <Route path="*" element={<Navigate to={isLoged ? "/dashboard" : "/login"} replace />} />
           </Route>
         </Routes>
       </BrowserRouter>
