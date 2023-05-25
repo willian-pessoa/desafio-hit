@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, IconButton, Button } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Menu, Logout } from "@mui/icons-material";
 
 import FlexBetween from "components/CustomBoxs/FlexBetween";
 
@@ -33,7 +33,11 @@ const NavBar = ({ setIsSideBarOpen }) => {
             {" "}
             <Menu />
           </IconButton>
-          <Button onClick={() => dispatch(setLogout())} color="inherit">
+          <Button
+            onClick={() => dispatch(setLogout())}
+            color="inherit"
+            endIcon={<Logout style={{ width: "18px", height: "18px" }} />}
+          >
             Logout
           </Button>
         </FlexBetween>
