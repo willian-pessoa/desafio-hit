@@ -54,7 +54,7 @@ export const dataToPieChart = () => {
 
 export const formatDate = (inputDate) => {
   /*
-    receive date object, return string format DD/MM/YYYY ás HH:MM
+    receive date object, return string format DD/MM/YYYY às HH:MM
   */
   let date, month, year, hour, minute;
 
@@ -80,5 +80,5 @@ export const formatDate = (inputDate) => {
     .toString()
     .padStart(2, '0');
 
-  return `${date}/${month}/${year} ás ${hour}:${minute}`;
+  return `${date}/${month}/${year} às ${hour}:${minute}`;
 }

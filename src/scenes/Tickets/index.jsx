@@ -21,7 +21,7 @@ const Tickets = () => {
     {
       field: "id",
       headerName: "ID",
-      flex: 0.5,
+      flex: 0.3,
     },
     {
       field: "status",
@@ -31,7 +31,7 @@ const Tickets = () => {
     {
       field: "createdAt",
       headerName: "Criado Em",
-      flex: 0.5,
+      flex: 0.7,
       renderCell: (params) => {
         let date = new Date(params.value);
         return formatDate(date);
