@@ -3,9 +3,9 @@ import { Box, useMediaQuery } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
 import Header from "components/Header/Header";
+import CenterBox from "components/CustomBoxs/CenterBox";
 
 import { dataToTicketsTable, formatDate } from "utils/helpers";
-import CenterBox from "components/CustomBoxs/CenterBox";
 
 const Tickets = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -83,6 +83,7 @@ const Tickets = () => {
             columns={columns}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
+            pageSizeOptions={[5, 10, 25]}
           />
         </Box>
       </CenterBox>

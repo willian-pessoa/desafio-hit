@@ -1,5 +1,7 @@
 const data = require("../data/data.json")
 
+const COLORS = ["#faebd7", "#f0c284", "#fdf5e6"]
+
 export const dataToTicketsTable = () => {
   /*
   Process data to return a array of object 
@@ -18,6 +20,36 @@ export const dataToTicketsTable = () => {
   })
 
   return tickets
+}
+
+export const dataToPieChart = () => {
+  /*
+ Process data to return a array of object 
+ {
+   id: string,
+   value: number,
+   label: string,
+   color: string,
+ }
+ */
+  let mapTickets = {}
+
+  data.tickets.forEach(({ status }) => {
+    if (mapTickets[status]) {
+      mapTickets[status]++
+    } else {
+      mapTickets[status] = 1
+    }
+  })
+
+  return Object.entries(mapTickets).map(([key, value], idx) => {
+    return {
+      id: key,
+      label: key,
+      value: value,
+      color: COLORS[idx],
+    }
+  })
 }
 
 export const formatDate = (inputDate) => {
