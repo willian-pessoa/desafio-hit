@@ -4,3 +4,24 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #f0c284 #fdf5e6;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fdf5e6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #f0c284;
+  border-radius: 10px;
+}
