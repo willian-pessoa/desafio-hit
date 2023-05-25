@@ -1,11 +1,29 @@
 import React, { useMemo, useState } from "react";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery, Typography } from "@mui/material";
 import { ResponsivePie } from "@nivo/pie";
 
 import Header from "components/Header/Header";
 import CenterBox from "components/CustomBoxs/CenterBox";
 
 import { dataToPieChart } from "utils/helpers";
+
+const CustomLayerComponent = (myProps) => (layerProps) => {
+  const { centerX, centerY } = layerProps;
+
+  return (
+    <text
+      x={centerX}
+      y={centerY}
+      textAnchor="middle"
+      dominantBaseline="central"
+      style={{
+        fontSize: "1rem",
+      }}
+    >
+      {myProps}
+    </text>
+  );
+};
 
 const Dashboard = () => {
   const isNonMobile = useMediaQuery("(min-width: 750px)");
@@ -28,6 +46,7 @@ const Dashboard = () => {
           height="60vh"
           position="relative"
         >
+          <Typography align="center">Tickets</Typography>
           <ResponsivePie
             data={pie}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -50,6 +69,13 @@ const Dashboard = () => {
               from: "color",
               modifiers: [["darker", 2]],
             }}
+            layers={[
+              "arcLinkLabels",
+              "arcs",
+              "arcLabels",
+              "legends",
+              CustomLayerComponent(`Total: ${total}`),
+            ]}
             legends={[
               {
                 anchor: "bottom",
@@ -68,15 +94,6 @@ const Dashboard = () => {
               },
             ]}
           />
-          <Box
-            position="absolute"
-            sx={{
-              top: isNonMobile ? "43%" : "100%",
-              left: isNonMobile ? "45%" : "40%",
-            }}
-          >
-            Total: {total}
-          </Box>
         </Box>
       </CenterBox>
     </Box>

@@ -13,7 +13,12 @@ const NavBar = ({ setIsSideBarOpen }) => {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "antiquewhite", color: "black", padding: "0" }}
+      sx={{
+        backgroundColor: "antiquewhite",
+        color: "black",
+        padding: "0",
+        boxShadow: "none",
+      }}
     >
       <Toolbar>
         <FlexBetween width="100%">
